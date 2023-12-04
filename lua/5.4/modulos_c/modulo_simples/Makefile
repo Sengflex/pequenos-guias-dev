@@ -2,6 +2,7 @@ PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 OBJS = teste.o
 
+# A lua module is a dynamic link library. So we compile sources with -fPIC and link the library with -shared
 LDFLAGS:=-shared -llua
 CFLAGS:=-fPIC
 

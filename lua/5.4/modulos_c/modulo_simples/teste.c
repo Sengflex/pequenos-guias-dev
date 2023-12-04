@@ -1,6 +1,7 @@
 #include <lua.h>
 #include <lauxlib.h>
 
+/* This is a function that have the C Function signature */
 static int soma(lua_State *L) {
 	int n = lua_gettop(L); /* number of arguments */
 	lua_Number sum = 0.0;
@@ -16,11 +17,13 @@ static int soma(lua_State *L) {
 	lua_pushnumber(L, sum); /* second result */
 	return 2; /* number of results */
 }
-
+/* This array conatins the functions of the module */
 static luaL_Reg exports[] = {
 		"soma", soma
 };
 
+/* This is the function Lua will altomaticaly find when doing a require("test") call
+ * it aways have the form luaopen_<libname> */
 int luaopen_test(lua_State *L) {
 	luaL_newlib(L, exports);
 	return 1;
