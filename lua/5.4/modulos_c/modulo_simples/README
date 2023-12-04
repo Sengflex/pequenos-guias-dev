@@ -1,0 +1,5 @@
+These file shows how to build a C module for Lua 5.4
+
+Compiled on Archlinux, using gcc and make
+Linked with lualib version 5.4
+Edited Eclipse CDT
