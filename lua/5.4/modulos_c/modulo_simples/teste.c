@@ -25,6 +25,11 @@ static luaL_Reg exports[] = {
 /* This is the function Lua will altomaticaly find when doing a require("test") call
  * it aways have the form luaopen_<libname> */
 int luaopen_test(lua_State *L) {
+	/*
+	 * From official docs:
+	 * 		void luaL_newlib (lua_State *L, const luaL_Reg l[]);
+	 *		Creates a new table and registers there the functions in the list l.
+	 * */
 	luaL_newlib(L, exports);
 	return 1;
 }
